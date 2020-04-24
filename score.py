@@ -24,7 +24,7 @@ def display_score():
     Score= random.randrange(0, 5) 
     #Text through GUI SysFont(name, size, bold=False, italic=False) 
     myFont = pygame.font.SysFont("Times New Roman",18 ,True)
-    #score Label render(text, antialias, color, background=None) -> Surface
+    #score Label render(text, antialias, color, background=None) 
     scoreLab=myfont.render("Your Score is : ",white)
     # pass a string to myFont.render
     scoreDisplay = myFont.render(str(Score), 1, white)
