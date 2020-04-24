@@ -3,10 +3,7 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 import pygame
 import random
-pygame.init()
 
-x = 1
-y = 0
 def init():
 	glClearColor(0,0,0,0)
 	glMatrixMode(GL_PROJECTION)
@@ -16,18 +13,16 @@ def init():
 
 
 def display_score():
-    global x
-    global y 
-    glTranslate(x, y, 0)
-    white=(1,1,1)
-    #we would put the score variable here instead of the random number generation
-    Score= random.randrange(0, 5) 
-    #Text through GUI SysFont(name, size, bold=False, italic=False) 
-    myFont = pygame.font.SysFont("Times New Roman",18 ,True)
-    #score Label render(text, antialias, color, background=None) 
-    scoreLab=myfont.render("Your Score is : ",white)
-    # pass a string to myFont.render
-    scoreDisplay = myFont.render(str(Score), 1, white)
+   glLineWidth(5)
+    glColor(0,0,1,1)
+    glMatrixMode(GL_PROJECTION)
+    glLoadIdentity()
+    gluOrtho2D(0,1000,0,1000)
+    glMatrixMode(GL_MODELVIEW)
+    string = "Hello Alaa"
+    string = string.encode()
+    for x in string:
+        glutStrokeCharacter(GLUT_STROKE_ROMAN, x)
     glutSwapBuffers()
 
 
